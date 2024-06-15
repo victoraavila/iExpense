@@ -11,6 +11,8 @@
 		96C579DF2B65607C00EBDE13 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C579DE2B65607C00EBDE13 /* ContentView.swift */; };
 		96C579E12B65607E00EBDE13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C579E02B65607E00EBDE13 /* Assets.xcassets */; };
 		96C579E42B65607E00EBDE13 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C579E32B65607E00EBDE13 /* Preview Assets.xcassets */; };
+		96C579EB2B656D6F00EBDE13 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C579EA2B656D6F00EBDE13 /* AddView.swift */; };
+		96DF71112BA6BFD60054C280 /* SwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 96DF71102BA6BFD60054C280 /* SwiftUIKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,7 @@
 		96C579DE2B65607C00EBDE13 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		96C579E02B65607E00EBDE13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96C579E32B65607E00EBDE13 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		96C579EA2B656D6F00EBDE13 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96DF71112BA6BFD60054C280 /* SwiftUIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +57,7 @@
 			children = (
 				96C579DC2B65607C00EBDE13 /* iExpenseApp.swift */,
 				96C579DE2B65607C00EBDE13 /* ContentView.swift */,
+				96C579EA2B656D6F00EBDE13 /* AddView.swift */,
 				96C579E02B65607E00EBDE13 /* Assets.xcassets */,
 				96C579E22B65607E00EBDE13 /* Preview Content */,
 			);
@@ -83,6 +88,9 @@
 			dependencies = (
 			);
 			name = iExpense;
+			packageProductDependencies = (
+				96DF71102BA6BFD60054C280 /* SwiftUIKit */,
+			);
 			productName = iExpense;
 			productReference = 96C579D92B65607C00EBDE13 /* iExpense.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 96C579D02B65607C00EBDE13;
+			packageReferences = (
+				96DF710F2BA6BFD60054C280 /* XCRemoteSwiftPackageReference "SwiftUIKit" */,
+			);
 			productRefGroup = 96C579DA2B65607C00EBDE13 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +150,7 @@
 			files = (
 				96C579DF2B65607C00EBDE13 /* ContentView.swift in Sources */,
 				96C579DD2B65607C00EBDE13 /* iExpenseApp.swift in Sources */,
+				96C579EB2B656D6F00EBDE13 /* AddView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +356,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		96DF710F2BA6BFD60054C280 /* XCRemoteSwiftPackageReference "SwiftUIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/youjinp/SwiftUIKit";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		96DF71102BA6BFD60054C280 /* SwiftUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 96DF710F2BA6BFD60054C280 /* XCRemoteSwiftPackageReference "SwiftUIKit" */;
+			productName = SwiftUIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 96C579D12B65607C00EBDE13 /* Project object */;
 }
