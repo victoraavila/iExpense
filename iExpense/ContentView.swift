@@ -15,6 +15,7 @@ struct ContentView: View {
     // Since we want to further delete items using .onDelete(), we have to create the list using ForEach().
     // The @State here is just to make expenses alive
     @Query var expenses: [ExpenseItem]
+    @Environment(\.modelContext) var modelContext
     
     // 3 things to be done in order to show the AddView
     // 1. Add a @State property to track if we are showing the AddView or not
@@ -51,7 +52,7 @@ struct ContentView: View {
                         }
                     }
                     // Adding the functionality to delete (for debug purposes) items via .onDelete()
-//                    .onDelete(perform: removeItems)
+                    .onDelete(perform: removeItems)
                 } header: {
                     Text("Business expenses")
                 }
@@ -81,7 +82,7 @@ struct ContentView: View {
                         }
                     }
                     // Adding the functionality to delete (for debug purposes) items via .onDelete()
-//                    .onDelete(perform: removeItems)
+                    .onDelete(perform: removeItems)
                 } header: {
                     Text("Personal expenses")
                 }
@@ -97,9 +98,11 @@ struct ContentView: View {
         }
     }
     
-//    func removeItems(at offsets: IndexSet) {
-//        expenses.items.remove(atOffsets: offsets)
-//    }
+    func removeItems(at offsets: IndexSet) {
+        for i in offsets {
+            modelContext.delete(expenses[i])
+        }
+    }
 }
 
 #Preview {
