@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		967830932C1E137D0090910E /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967830922C1E137D0090910E /* ExpenseItem.swift */; };
 		96C579DD2B65607C00EBDE13 /* iExpenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C579DC2B65607C00EBDE13 /* iExpenseApp.swift */; };
 		96C579DF2B65607C00EBDE13 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C579DE2B65607C00EBDE13 /* ContentView.swift */; };
 		96C579E12B65607E00EBDE13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C579E02B65607E00EBDE13 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		967830922C1E137D0090910E /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
 		96C579D92B65607C00EBDE13 /* iExpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iExpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C579DC2B65607C00EBDE13 /* iExpenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseApp.swift; sourceTree = "<group>"; };
 		96C579DE2B65607C00EBDE13 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			children = (
 				96C579DC2B65607C00EBDE13 /* iExpenseApp.swift */,
 				96C579DE2B65607C00EBDE13 /* ContentView.swift */,
+				967830922C1E137D0090910E /* ExpenseItem.swift */,
 				96C579EA2B656D6F00EBDE13 /* AddView.swift */,
 				96C579E02B65607E00EBDE13 /* Assets.xcassets */,
 				96C579E22B65607E00EBDE13 /* Preview Content */,
@@ -151,6 +154,7 @@
 				96C579DF2B65607C00EBDE13 /* ContentView.swift in Sources */,
 				96C579DD2B65607C00EBDE13 /* iExpenseApp.swift in Sources */,
 				96C579EB2B656D6F00EBDE13 /* AddView.swift in Sources */,
+				967830932C1E137D0090910E /* ExpenseItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,15 @@
+{
+  "originHash" : "d91be34f9de7777988f3cd650af84cb5eacd7400e3d2c4a3f631ebe51cf4fb1b",
+  "pins" : [
+    {
+      "identity" : "swiftuikit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/youjinp/SwiftUIKit",
+      "state" : {
+        "branch" : "master",
+        "revision" : "a83aedd996bcb59ca846346bb507f090a7350e34"
+      }
+    }
+  ],
+  "version" : 3
+}

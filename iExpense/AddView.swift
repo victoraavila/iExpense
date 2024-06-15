@@ -11,13 +11,14 @@ import SwiftUIKit
 struct AddView: View {
     // Read the dismiss value from the Environment (it will figure out how things are setted up to discover how to dismiss)
     @Environment(\.dismiss) var dismiss
+    @Environment(\.modelContext) var modelContext
     
     @State private var name = "Expense Name"
     @State private var type = "Business"
     @State private var amount: Double? = 0.0
     
     // We don't want to create a second Expenses here, but use the original Expenses from ContentView
-    var expenses: Expenses
+//    var expenses: Expenses
     
     let types = ["Business", "Personal"]
     
@@ -43,7 +44,8 @@ struct AddView: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
                         let item = ExpenseItem(name: name, type: type, amount: amount ?? 0.0)
-                        expenses.items.append(item)
+//                        expenses.items.append(item)
+                        modelContext.insert(item)
                         dismiss()
                     }
                 }
@@ -58,5 +60,6 @@ struct AddView: View {
 }
 
 #Preview {
-    AddView(expenses: Expenses()) // Just for preview purposes. This won't change the passing of the already created expenses.
+    AddView()
+        .modelContainer(for: ExpenseItem.self)
 }
