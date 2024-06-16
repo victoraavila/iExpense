@@ -27,17 +27,20 @@ struct ContentView: View {
     var body: some View {
         NavigationStack() {
             List {
-                Section() {
-                    ExpensesView(expenseType: "Business", typesShown: typesShown, sortOrder: sortOrder)
-                } header: {
-                    Text("Business expenses")
+                if typesShown.contains("Business") && countExpensesByType("Business") > 0 {
+                    Section() {
+                        ExpensesView(expenseType: "Business", typesShown: typesShown, sortOrder: sortOrder)
+                    } header: {
+                        Text("Business expenses")
+                    }
                 }
                 
-
-                Section() {
-                    ExpensesView(expenseType: "Personal", typesShown: typesShown, sortOrder: sortOrder)
-                } header: {
-                    Text("Personal expenses")
+                if typesShown.contains("Personal") && countExpensesByType("Personal") > 0 {
+                    Section() {
+                        ExpensesView(expenseType: "Personal", typesShown: typesShown, sortOrder: sortOrder)
+                    } header: {
+                        Text(typesShown.contains("Personal") ? "Personal expenses" : "")
+                    }
                 }
             }
             .navigationTitle("iExpense")
@@ -72,6 +75,11 @@ struct ContentView: View {
             }
         }
     }
+    
+    func countExpensesByType(_ type: String) -> Int {
+        expenses.filter { $0.type == type }.count
+    }
+    
 }
 
 #Preview {
