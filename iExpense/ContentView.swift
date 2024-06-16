@@ -22,9 +22,6 @@ struct ContentView: View {
     // 2. Tell SwiftUI to use this boolean as a condition for showing a sheet
     // 3. Put an instance of the View inside the sheet
     @State private var showingAddExpense = false
-    
-    @State private var expenseTypes = [String]()
-    
     @State private var sortOrder = [SortDescriptor(\ExpenseItem.name)]
     
     var body: some View {
@@ -32,8 +29,6 @@ struct ContentView: View {
             List {
                 Section() {
                     ExpensesView(expenseType: "Business", sortOrder: sortOrder)
-//                    // Adding the functionality to delete (for debug purposes) items via .onDelete()
-//                    .onDelete(perform: removeItems)
                 } header: {
                     Text("Business expenses")
                 }
@@ -41,8 +36,6 @@ struct ContentView: View {
 
                 Section() {
                     ExpensesView(expenseType: "Personal", sortOrder: sortOrder)
-                    // Adding the functionality to delete (for debug purposes) items via .onDelete()
-//                    .onDelete(perform: removeItems)
                 } header: {
                     Text("Personal expenses")
                 }
@@ -64,12 +57,6 @@ struct ContentView: View {
                     Button("Add Expense", systemImage: "plus") {} // The label will be used only on VoiceOver
                 }
             }
-        }
-    }
-    
-    func removeItems(at offsets: IndexSet) {
-        for i in offsets {
-            modelContext.delete(expenses[i])
         }
     }
 }

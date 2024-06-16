@@ -34,7 +34,7 @@ struct ExpensesView: View {
             }
         }
         // Adding the functionality to delete (for debug purposes) items via .onDelete()
-//        .onDelete(perform: removeItems)
+        .onDelete(perform: removeItems)
     }
     
     init(expenseType: String, sortOrder: [SortDescriptor<ExpenseItem>]) {
