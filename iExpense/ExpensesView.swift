@@ -37,9 +37,11 @@ struct ExpensesView: View {
         .onDelete(perform: removeItems)
     }
     
-    init(expenseType: String, sortOrder: [SortDescriptor<ExpenseItem>]) {
+    init(expenseType: String, typesShown: [String], sortOrder: [SortDescriptor<ExpenseItem>]) {
         self.expenseType = expenseType
-        _expenses = Query(sort: sortOrder)
+        _expenses = Query(filter: #Predicate<ExpenseItem> { item in
+            typesShown.contains(item.type)
+        }, sort: sortOrder)
     }
     
     func removeItems(at offsets: IndexSet) {
@@ -50,6 +52,6 @@ struct ExpensesView: View {
 }
 
 #Preview {
-    ExpensesView(expenseType: "Business", sortOrder: [SortDescriptor(\ExpenseItem.name)])
+    ExpensesView(expenseType: "Business", typesShown: ["Business", "Personal"], sortOrder: [SortDescriptor(\ExpenseItem.name)])
         .modelContainer(for: ExpenseItem.self)
 }

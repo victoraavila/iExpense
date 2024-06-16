@@ -21,21 +21,21 @@ struct ContentView: View {
     // 1. Add a @State property to track if we are showing the AddView or not
     // 2. Tell SwiftUI to use this boolean as a condition for showing a sheet
     // 3. Put an instance of the View inside the sheet
-    @State private var showingAddExpense = false
     @State private var sortOrder = [SortDescriptor(\ExpenseItem.name)]
+    @State private var typesShown = ["Business", "Personal"]
     
     var body: some View {
         NavigationStack() {
             List {
                 Section() {
-                    ExpensesView(expenseType: "Business", sortOrder: sortOrder)
+                    ExpensesView(expenseType: "Business", typesShown: typesShown, sortOrder: sortOrder)
                 } header: {
                     Text("Business expenses")
                 }
                 
 
                 Section() {
-                    ExpensesView(expenseType: "Personal", sortOrder: sortOrder)
+                    ExpensesView(expenseType: "Personal", typesShown: typesShown, sortOrder: sortOrder)
                 } header: {
                     Text("Personal expenses")
                 }
@@ -43,6 +43,19 @@ struct ContentView: View {
             .navigationTitle("iExpense")
             // Adding the functionality to add (for debug purposes) items via Toolbar
             .toolbar {
+                Menu("Filter", systemImage: "line.3.horizontal.decrease.circle") {
+                    Picker("Filter", selection: $typesShown) {
+                        Text("Show all expenses")
+                            .tag(["Business", "Personal"])
+                        
+                        Text("Show only business expenses")
+                            .tag(["Business"])
+                        
+                        Text("Show only personal expenses")
+                            .tag(["Personal"])
+                    }
+                }
+                
                 Menu("Sort", systemImage: "arrow.up.arrow.down") {
                     Picker("Sort", selection: $sortOrder) {
                         Text("Sort by Name")
