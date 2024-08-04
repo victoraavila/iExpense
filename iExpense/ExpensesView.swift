@@ -31,6 +31,9 @@ struct ExpensesView: View {
                     Text(item.amount, format: .currency(code: Locale.current.currency?.identifier ?? "$"))
                         .foregroundStyle(item.amount > 100 ? .red : (item.amount > 10 ? .yellow : .green))
                 }
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel("\(item.name), \(item.amount, format: .currency(code: Locale.current.currency?.identifier ?? "$"))")
+                .accessibilityHint("Category: \(item.type)")
             }
         }
         // Adding the functionality to delete (for debug purposes) items via .onDelete()
